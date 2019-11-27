@@ -120,6 +120,8 @@ model.fit(x_train, y_train,
           callbacks=[early_stopping],
           validation_data=(x_test, y_test))
 
-print('Test...')
-result = model.predict(x_test)
+score, acc = model.evaluate(x_test, y_test,
+                            batch_size=batch_size)
+print('Test score:', score)
+print('Test accuracy:', acc)
 
